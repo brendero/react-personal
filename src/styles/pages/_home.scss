@@ -1,0 +1,106 @@
+.info-header {
+    display: flex;
+    height: 279px;
+    img {
+        width: 30%;
+    }
+}
+.info-text {
+    h1{
+        margin: 0;
+        margin-left: 200px;
+    }
+    div {
+        font-family: $raleway;
+        width: 80%;
+        float: right;
+        display: flex;
+        justify-content: flex-end;
+        p {
+            padding: 29px;
+            font-size: 0.9vw;
+            font-weight: 300;
+            color: $black;
+            width: 37%;
+            float: left;
+            a {
+                color: $red;
+            }:hover {
+                color: $blue;
+            }
+        }
+    }
+}
+
+.portfolio-wrapper {
+    margin-top: 150px;
+}
+
+.work-wrapper {
+    overflow: auto;
+    div {
+        width: 25%;
+        height: 342px;
+        float: left;
+        background-size: cover;
+        a {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            color: transparent;
+            justify-content: center;
+            align-items: center;
+            font-family: $raleway;
+            font-weight: 300;
+            &:hover {
+                color: $yellow;
+                transition-duration: 0.5s;
+                background: $black;
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+//Mobile Breakpoint
+@media only screen and (max-width:700px) {
+    .info-header {
+        flex-direction: column;
+        img {
+            width: 100%;
+        }
+    }
+    .info-text {
+        h1 {
+            margin-left: 0;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        div {
+            width: 100%;
+            p {
+                padding: 5px;
+                width: 50%;
+                font-size: 2.1vw;
+                a {
+                    color: $blue;
+                }
+            }
+        }
+    }
+    .portfolio-wrapper {
+        margin-top: 185px;
+    }
+    .work-wrapper {
+        div {
+            width: 50%;
+            height: 168px;
+            a {
+                background: $black;
+                color: $yellow;
+                opacity: 0.6;
+            }
+        }
+    }
+}

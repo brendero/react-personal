@@ -1,0 +1,30 @@
+.fof-wrapper {
+    width: 40%;
+    float: left;
+    h1{
+        font-size: 3.5em;
+        margin: 0;
+    }
+    p {
+        font-family: $raleway;
+        font-size: 2em;
+        color: $black;
+        font-weight: 300;
+    }
+}
+.fof-img {
+    width: 58%;
+}
+
+//Mobile Breakpoint
+@media only screen and (max-width:700px) {
+    .fof-wrapper {
+        width: 100%;
+        p {
+            font-size: 1.9em;
+        }
+    }
+    .fof-img {
+        width: 100%;
+    }
+}

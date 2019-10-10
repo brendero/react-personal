@@ -1,0 +1,32 @@
+html,
+body {
+    min-height: 100%;
+}
+html {
+    box-sizing: border-box;
+}
+body {
+    background: $white;
+}
+h1 {
+    font-family: $raleway;
+    color: $yellow;
+    font-weight: bold;
+}
+.content-wrapper {
+    padding-top: 150px;
+    width: 91%;
+    margin: auto;
+}
+main {
+    height: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+    .content-wrapper {
+        padding-top: 80px;
+    }
+    h1 {
+        font-size: 1.6em;
+    }
+}

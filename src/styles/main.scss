@@ -1,0 +1,20 @@
+
+@import 'vendor/normalize';
+@import 'base/fonts';
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'base/base';
+@import 'abstracts/animations';
+
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/navbar';
+
+@import 'pages/home';
+@import 'pages/contact';
+@import 'pages/skills';
+@import 'pages/404';
+@import 'pages/splash';
+@import 'pages/login';
+@import 'pages/admin';

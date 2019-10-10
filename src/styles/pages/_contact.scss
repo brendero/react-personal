@@ -1,0 +1,125 @@
+.contact-form {
+    width: 50%;
+    margin-top: 100px;  
+    input {
+        width: 47%;
+        padding-bottom: 10px;
+        margin-right: 5%;
+        background: transparent;
+        border: 1px solid $black;
+        border-width: 0 0 1px 0;
+        color: $black;
+    }
+    input[name=_replyto] {
+        margin-right: 0;
+    }
+    input:focus {
+        outline: none;
+    }
+    input::placeholder {
+        color: $black;
+        font-family: $raleway;
+    }
+    input::-webkit-input-placeholder {
+        color: $black;
+        font-family: $raleway;
+    }
+    input::-moz-placeholder {
+        color: $black;
+        font-family: $raleway;
+    }
+    input:-ms-input-placeholder {
+        color: $black;
+        font-family: $raleway;
+    }
+
+    input:-webkit-input-placeholder {
+        color: $black;
+        font-family: $raleway;
+    }
+    textarea {
+        width: 100%;
+        float: left;
+        padding-bottom: 70px;
+        background: transparent;
+        border: solid $black;
+        border-width: 0 0 1px 0;
+        color: $black;
+        margin-top: 100px;
+        resize: none;
+    }
+    textarea:focus {
+        outline: none;
+    }
+    textarea::placeholder {
+        color: $black;
+        font-family: $raleway;
+    }
+    textarea::-moz-placeholder {
+        color: $black;
+        font-family: $raleway;
+    }
+    textarea::-ms-input-placeholder {
+        color: $black;
+        font-family: $raleway;
+    }
+    textarea::-webkit-input-placeholder {
+        color: $black;
+        font-family: $raleway;
+    }
+    textarea::-webkit-input-placeholder {
+        color: $black;
+        font-family: $raleway;
+    }
+}
+.submit-btn {
+        color: $black;
+        background: transparent;
+        border: 1px solid $black;
+        font-family: $raleway;
+        padding: 10px 50px 10px 50px;
+        cursor: pointer;
+        margin-top: 20px;
+        float: right;
+}
+.submit-btn:hover {
+    color: $white;
+    background: $black;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+.social-media {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 62px;
+    a {
+        padding: 11px;
+        color: $blue;
+        font-size: 1.5rem;
+        &:hover {
+            color: $black;
+            i {
+                text-shadow: 0px 0px 3px $blue;
+            }
+        }
+    }
+}
+
+
+//Mobile Breakpoint
+@media only screen and (max-width:700px) {
+    .contact-form {
+        width: 100%;
+        input {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        input[name=_replyto] {
+            margin-right: 0;
+        }
+        textarea {
+            margin-top: 20px;
+        }
+    }
+}

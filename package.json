@@ -1,0 +1,43 @@
+{
+  "name": "webpack-try",
+  "version": "1.0.0",
+  "description": "just a test for setting up webpack and babel",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start-dev",
+    "start-dev": "webpack-dev-server --host localhost --env dev --config=config/webpack/dev.js --open",
+    "build": "webpack -p --env prod --config=config/webpack/prod.js"
+  },
+  "author": "Brent De Roeck",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.1.2",
+    "webpack-merge": "^4.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router": "^5.1.1",
+    "@types/react-router-dom": "^5.1.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.1.0",
+    "typescript": "^3.6.3",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.1"
+  }
+}

@@ -1,0 +1,282 @@
+nav {
+    position: fixed;
+    width: 100%;
+    background: $white;
+    box-shadow: 0 -14px 27px 0 $black;
+}
+.main-nav {
+    display: -webkit-flex;
+    display: flex;
+    list-style: none;
+    margin-right: 90px;
+    margin-bottom: 0;
+  }
+  .main-nav li:first-child {
+    margin-right: auto;
+  }
+  .main-nav a {
+    margin: 10px;
+    font-family: $raleway;
+    border-radius: 5px;
+    font-weight: bold;
+    color: $black;
+    position: relative;
+    display: block;
+    padding: 15px;
+    padding-top: 5px;
+    text-decoration: none;
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        top: 70%;
+        width: 0;
+        right: 0;
+        height: 2px;
+      }
+      &::before {
+        transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
+        background: $blue;
+      }
+      &::after {
+        transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+        background: $red;
+      }
+      &:hover {
+        &::after,
+        &::before {
+          width: 100%;
+          left: 0;
+        }
+      }
+  }
+  .main-nav .logo {
+      padding: 0 !important;
+      &:hover {
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+  }
+  .main-nav .logo > img {
+      width: 40px;
+  }
+
+.mobile-menu-btn {
+    display: none;
+    color: white;
+}
+.mobile-menu {
+    display: none;
+}
+@media only screen and (max-width: 1296px) {
+  .navbar-svg {
+    display: none;
+  }
+}
+//Mobile Breakpoint
+@media only screen and (max-width:700px) {
+    .main-nav {
+        display: none;
+    }
+    .mobile-menu {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        background: $black;
+        #closeBtn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size:1.4em;
+            color: $white;
+            font-weight: 100;
+        }
+        div {
+            width: 100%;
+            text-align: center;
+            margin-top: 103px;
+            img {
+                width: 25%;
+            }
+        }
+        ul {
+            margin-top: 80px;
+            list-style: none;
+            padding: 0;
+            font-family: $raleway;
+            li {
+                margin-bottom: 40px;
+                width: 27%;
+                a {
+                    padding-left: 40px;
+                    font-size: 2em;
+                    font-weight: bold;
+                    color: $white;
+                    text-decoration: none;
+                }:hover {
+                    border-bottom: 2px solid $yellow;
+                }
+            }
+        }
+    }
+
+    //
+    .button {
+        display: block;
+        position: fixed;
+        z-index: 999;
+        right: 3%;
+        top: 2%;
+        width: 40px;
+        height: 40px;
+        border-radius: 3px;
+        margin: 0 auto;
+        padding-top: 12px;
+        transition: all 500ms cubic-bezier(1.000, 0.000, 0.645, 0.650);
+      }
+      
+      .sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+      
+      .menu-bar {
+        display: block;
+        position: relative;
+        background: $black;
+        width: 26px;
+        height: 2px;
+        border-radius: 1px;
+        transition: all 300ms;
+        margin: 0 auto;
+      }
+      
+      .bar1 {
+        top: 0;
+        animation: topbar-back 500ms;
+        animation-fill-mode: both;
+        animation-play-state: initial !important;
+      }
+      
+      .bar2 { opacity: 1; }
+      
+      .bar3 {
+        bottom: 0;
+        animation: bottombar-back 500ms;
+        animation-fill-mode: both;
+        animation-play-state: initial !important;
+      }
+      
+      .menu-bar + .menu-bar {
+        margin-top: 5px;
+      }
+      
+      .toggled .bar1 {
+        top: 25%;
+        animation: topbar-x 500ms;
+        animation-fill-mode: both;
+        background: $white;
+      }
+      
+      .toggled .bar2 {
+        opacity: 0;
+        background: $white;
+      }
+      
+      .toggled .bar3 {
+        bottom: 25%;
+        animation: bottombar-x 500ms;
+        animation-fill-mode: both;
+        background: $white;
+      }
+      
+      @keyframes topbar-x {
+        0% {
+          top: 0;
+          -webkit-transform: rotate(0deg);
+        }
+      
+        45% {
+          top: 25%;
+          -webkit-transform: rotate(145deg);
+        }
+      
+        75% {
+          -webkit-transform: rotate(130deg);
+        }
+      
+        100% {
+          -webkit-transform: rotate(135deg);
+        }
+      }
+      
+      @keyframes topbar-back {
+        0% {
+          top: 25%;
+          -webkit-transform: rotate(135deg);
+        }
+      
+        45% {
+          -webkit-transform: rotate(-10deg);
+        }
+      
+        75% {
+          -webkit-transform: rotate(5deg);
+        }
+      
+        100% {
+          top: 0;
+          -webkit-transform: rotate(0);
+        }
+      }
+      
+      @keyframes bottombar-x {
+        0% {
+          bottom: 0;
+          -webkit-transform: rotate(0deg);
+        }
+      
+        45% {
+          bottom: 25%;
+          -webkit-transform: rotate(-145deg);
+        }
+      
+        75% {
+          -webkit-transform: rotate(-130deg);
+        }
+      
+        100% {
+          -webkit-transform: rotate(-135deg);
+        }
+      }
+      
+      @keyframes bottombar-back {
+        0% {
+          bottom: 25%;
+          -webkit-transform: rotate(-135deg);
+        }
+      
+        45% {
+          -webkit-transform: rotate(10deg);
+        }
+      
+        75% {
+          -webkit-transform: rotate(-5deg);
+        }
+      
+        100% {
+          bottom: 0;
+          -webkit-transform: rotate(0);
+        }
+      }
+      
+}

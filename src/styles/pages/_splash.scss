@@ -1,0 +1,46 @@
+.splashscreen-wrapper {
+    width: 50%;
+    float: left;
+    h1 {
+        font-size: 3em;
+    }
+    h4 {
+        font-size: 1.2rem;
+        color: $yellow;
+        font-family: $raleway;
+        font-weight: 300;
+    }
+    i {
+        color: $white;
+        width: 100%;
+        font-size: 9rem;
+        margin-top: 13%;
+    }
+}
+.splashscreen-img {
+    width: 20%;
+    float: right;
+    margin-right: 17%;
+}
+
+//Mobile Breakpoint
+@media only screen and (max-width:700px) {
+    .splashscreen-wrapper {
+        width: 100%;
+        h1 {
+            font-size: 2em;
+        }
+        h4 {
+            font-size: 1rem;
+        }
+        i {
+            font-size: 5rem;
+        }
+    }
+    .splashscreen-img {
+        display: block;
+        margin: auto;
+        float: none;
+        margin-bottom: 20%;
+    }
+}
