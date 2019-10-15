@@ -13,6 +13,7 @@ import WorkDashboard from '../../pages/admin/work/WorkDashboard';
 import SkillsDashboard from '../../pages/admin/skills/SkillsDashboard';
 import UpdateSkills from '../../pages/admin/skills/UpdateSkills';
 import UpdateWork from '../../pages/admin/work/UpdateWork';
+import NotFound from '../../pages/NotFound';
 
 export const Navigation = () => {
   const logoutUser = () => {
@@ -58,19 +59,19 @@ export const Navigation = () => {
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route path="/skills">
+              <Route exact path="/skills">
                 <Skills />
               </Route>
-              <Route path="/contact">
+              <Route exact path="/contact">
                 <Contact />
               </Route>
-              <Route path="/login" >
+              <Route exact path="/login" >
                 <Login />
               </Route>
               <PrivateRoute exact path="/admin">
                 <Dashboard />
               </PrivateRoute>
-              <PrivateRoute path="/admin/work">
+              <PrivateRoute exact path="/admin/work">
                 <WorkDashboard />
               </PrivateRoute>
               <PrivateRoute path="/admin/work/:id">
@@ -82,6 +83,9 @@ export const Navigation = () => {
               <PrivateRoute path="/admin/skills/:id">
                 <UpdateSkills />
               </PrivateRoute>
+              <Route path="*">
+                <NotFound />
+              </Route>
             </Switch>
         </MainWrapper>
     </Router>

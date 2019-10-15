@@ -8,7 +8,7 @@
 
 .login-wrapper {
   width: 60%;
-  background: rgba(0,0,0,0.1);   
+  background: rgba(0,0,0,0.03);   
   box-shadow: 9px 8px 16px -11px $black;
   display: flex;
   flex-direction: row;
@@ -32,10 +32,24 @@
   .form-wrapper {
     padding: 40px;
     flex-direction: column;
+    label {
+      width: 100%;
+      margin: 20px 0;
+      input {
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 2px solid $blue;
+        padding: 10px 0;
+      }
+    }
   }
   .login-btn {
     background: $blue;
     color: $white;
+    border: none;
+    padding: 10px;
     width: 20%;
     align-self: flex-end;
   }

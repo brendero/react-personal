@@ -16,7 +16,6 @@ export default class PortfolioWork extends Component<{},{workArray: IWork[]}> {
         this.setState({
           workArray: res.data
         })
-        console.log(res);
       })
       .catch(err => console.log(err))
   }

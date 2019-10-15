@@ -2,13 +2,18 @@ import React, { Component } from 'react'
 import BrentSvg from '../../assets/Brent.svg';
 import axios from 'axios';
 import { Redirect } from 'react-router';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 
-export interface IState {
+interface IState {
   email: string;
   password: string;
 }
 
-export default class Login extends Component<{},IState> {
+interface IProps extends RouteComponentProps<any> {
+
+}
+
+class Login extends Component<IProps,IState> {
   constructor(props) {
     super(props);
 
@@ -35,7 +40,8 @@ export default class Login extends Component<{},IState> {
     axios.post('users/login', { email, password })
       .then((res) => {
         localStorage.setItem("authToken", res.data.token)
-        // TODO: redirect after login
+        // redirect after login
+        this.props.history.push('/admin')
       })
       .catch(err => console.log(err))
   }
@@ -69,3 +75,5 @@ export default class Login extends Component<{},IState> {
     )
   }
 }
+
+export default withRouter(Login)

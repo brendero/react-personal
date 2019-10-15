@@ -22,7 +22,6 @@ export default class WorkDashboard extends Component<{}, IState> {
   getWork = async () => {  
     axios.get('work')
       .then(res => {
-        console.log(res);
         this.setState({
           workArray: res.data,
           isLoading: false
@@ -34,7 +33,6 @@ export default class WorkDashboard extends Component<{}, IState> {
     this.getWork();
   }
   render() {
-    // TODO: create skeletonComponent for loading 
     return (
       <>
         <h1>Works</h1>

@@ -9,7 +9,6 @@ const UpdateWork: React.FC<IProps> = () => {
   const { id } = useParams();
   return (
     <div>
-      {id}      
     </div>
   )
 }
