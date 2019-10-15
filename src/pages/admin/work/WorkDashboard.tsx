@@ -35,7 +35,10 @@ export default class WorkDashboard extends Component<{}, IState> {
   render() {
     return (
       <>
-        <h1>Works</h1>
+        <h1 className="admin-title">Works</h1>
+        <Link to="/admin/work/add" className="add-new-btn">
+          Add New Work  
+        </Link>
         {
           this.state.isLoading ?
           <>

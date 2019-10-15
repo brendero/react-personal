@@ -37,8 +37,10 @@ export default class SkillsDashboard extends Component<{}, IState> {
   render() {
     return (
       <>
-        <h1>Skills</h1>
-        
+        <h1 className="admin-title">Skills</h1>
+        <Link to="/admin/skills/add" className="add-new-btn">
+          Add New Skill
+        </Link>
         {
           this.state.isLoading ? 
           <>
