@@ -1,12 +1,13 @@
 import React, { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 
-interface IProps {
+interface IProps extends RouteComponentProps<any> {
 
 }
 
-const UpdateSkills: React.FC<IProps> = () => {
+const UpdateSkills: React.FC<IProps> = (props) => {
   const [skill, setSkill] = useState();
   const { id } = useParams();
   
@@ -31,11 +32,20 @@ const UpdateSkills: React.FC<IProps> = () => {
     fetchSkill();
   }, [id])
 
+  const submitNewSkill = () => {
+    axios.post("skills", skill)
+      .then(res => {
+        console.log(res.data);
+        props.history.push('/admin/skills')
+      })
+      .catch(err => console.log(err))
+  }
+
   return (
     <>
       {
         skill ?
-          <>
+          <div className="admin-form-wrapper">
             <label>
               title:
               <input name="title" value={skill.title} onChange={changeState}/>
@@ -46,11 +56,15 @@ const UpdateSkills: React.FC<IProps> = () => {
             </label>
             <img src={skill.image} />
             <input type="file" accept="image/png, image/jpeg"/>
-          </>
+
+            <button onClick={submitNewSkill}>
+              update Skill
+            </button>
+          </div>
           : null 
       }
     </>
   )
 }
 
-export default UpdateSkills
+export default withRouter(UpdateSkills);

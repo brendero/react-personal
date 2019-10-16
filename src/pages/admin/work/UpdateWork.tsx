@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, RouteComponentProps, withRouter } from 'react-router-dom';
 import axios from 'axios';
 
-interface IProps {
+interface IProps extends RouteComponentProps<any> {
 
 }
 
-const UpdateWork: React.FC<IProps> = () => {
+const UpdateWork: React.FC<IProps> = (props) => {
   const [work, setWork] = useState();
   const { id } = useParams();
 
@@ -30,11 +30,18 @@ const UpdateWork: React.FC<IProps> = () => {
     fetchWork();
   }, [id])
   
+  const submitNewWork = () => {
+    axios.post("work", work)
+      .then(res => {
+        props.history.push('/admin/work')
+      })
+      .catch(err => console.log(err))
+  }
   return (
     <>
     {
       work ?
-        <>
+        <div className="admin-form-wrapper">
           <label>
             name:
             <input name="name" value={work.name} onChange={changeState}/>
@@ -44,11 +51,15 @@ const UpdateWork: React.FC<IProps> = () => {
             <input name="url" value={work.url} onChange={changeState}/>
           </label>
           <img src={work.image} />
-        </>
+          <input type="file" accept="image/png, image/jpeg"/>
+          <button onClick={submitNewWork}>
+            Update Work  
+          </button>    
+        </div>
         : null
     }
     </>
   )
 }
 
-export default UpdateWork
+export default withRouter(UpdateWork)

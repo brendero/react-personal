@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import BrentSvg from '../../assets/Brent.svg';
 import axios from 'axios';
-import { Redirect } from 'react-router';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import setAuthToken from '../../utils/setAuthToken';
 
@@ -9,6 +8,7 @@ interface IState {
   email: string;
   password: string;
   errors: any;
+  [key: string]: any;
 }
 
 interface IProps extends RouteComponentProps<any> {

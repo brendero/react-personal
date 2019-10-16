@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, '../../public'),
-    filename: 'index.bundle.js'
+    filename: 'main.bundle.js'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
@@ -41,11 +41,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './',
-    hot: true,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      'Access-Control-Allow-Headers': '*',
-    }
+    hot: true
   },
   externals: {
 		'React': 'react',

@@ -96,3 +96,33 @@
   border-radius: 10px; 
   float: right;
 }
+
+.admin-form-wrapper {
+  display: flex;
+  padding: 40px;
+  flex-direction: column;
+  label {
+    width: 100%;
+    margin: 20px 0;
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      border-bottom: 2px solid $blue;
+      padding: 10px 0;
+    }
+  }
+  button {
+    float: right;
+    width: 20%;
+    background: $blue;
+    color: $white;
+    padding: 15px;
+    align-self: flex-end;
+    border: none;
+  }
+  img {
+    width: 150px;
+  }
+}
