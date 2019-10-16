@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 interface IProps {
-  id: string;
+  id?: string;
   title: string;
   content: string;
   image: string;

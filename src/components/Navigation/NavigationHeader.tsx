@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import BrentPng from '../../assets/Brent.png';
 import BrentSvg from '../../assets/Brent.svg';
 import setAuthToken from '../../utils/setAuthToken';
 
 
-const NavigationHeader = () => {
+const NavigationHeader = ({history}) => {
   const [mobileToggle, setmobileToggle] = useState(false);
 
   const logoutUser = () => {
     localStorage.removeItem('authToken');
-    setAuthToken(null);
+    // setAuthToken(null);
+    history.push('/');
   }
   
   const toggleMobileMenu = (e) => {
@@ -29,7 +30,7 @@ const NavigationHeader = () => {
             <li><Link to="/contact">Contact</Link></li>
             {
               localStorage.getItem('authToken') ?
-                <li><button onClick={logoutUser}><i className="fa fa-sign-out"/></button></li>
+                <li><button onClick={logoutUser} className="logout-btn"><i className="fa fa-sign-out"/></button></li>
                 : null
             }
           </ul>
@@ -58,4 +59,4 @@ const NavigationHeader = () => {
   )
 }
 
-export default NavigationHeader
+export default withRouter(NavigationHeader)

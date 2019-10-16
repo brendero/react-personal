@@ -13,6 +13,8 @@ import UpdateSkills from '../../pages/admin/skills/UpdateSkills';
 import UpdateWork from '../../pages/admin/work/UpdateWork';
 import NotFound from '../../pages/NotFound';
 import NavigationHeader from './NavigationHeader';
+import AddWork from '../../pages/admin/work/AddWork';
+import AddSkill from '../../pages/admin/skills/AddSkill';
 
 export const Navigation = () => {
   return(
@@ -38,11 +40,17 @@ export const Navigation = () => {
               <PrivateRoute exact path="/admin/work">
                 <WorkDashboard />
               </PrivateRoute>
+              <PrivateRoute exact path="/admin/work/add">
+                <AddWork />
+              </PrivateRoute>
               <PrivateRoute path="/admin/work/:id">
                 <UpdateWork />
               </PrivateRoute>
               <PrivateRoute exact path="/admin/skills">
                 <SkillsDashboard />
+              </PrivateRoute>
+              <PrivateRoute exact path="/admin/skills/add">
+                <AddSkill/>
               </PrivateRoute>
               <PrivateRoute path="/admin/skills/:id">
                 <UpdateSkills />

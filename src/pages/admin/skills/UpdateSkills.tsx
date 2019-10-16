@@ -22,7 +22,7 @@ const UpdateSkills: React.FC<IProps> = (props) => {
 
   useEffect(() => {
     const fetchSkill = async() => {
-      axios.get(`skills/${id}`)
+      axios.get(`skills/${id}`, { headers: {"Authorization": `${localStorage.getItem("authToken")}`}})
         .then(res => {
           setSkill(res.data);
         })
@@ -33,7 +33,7 @@ const UpdateSkills: React.FC<IProps> = (props) => {
   }, [id])
 
   const submitNewSkill = () => {
-    axios.post("skills", skill)
+    axios.post("skills", skill, { headers: {"Authorization": `${localStorage.getItem("authToken")}`}})
       .then(res => {
         console.log(res.data);
         props.history.push('/admin/skills')

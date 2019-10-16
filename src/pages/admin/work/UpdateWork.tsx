@@ -20,7 +20,7 @@ const UpdateWork: React.FC<IProps> = (props) => {
   }
   useEffect(() => {
     const fetchWork = () => {
-      axios.get(`work/${id}`)
+      axios.get(`work/${id}`, { headers: {"Authorization": `${localStorage.getItem("authToken")}`}})
         .then(res => {
           setWork(res.data);
         }) 
@@ -31,7 +31,7 @@ const UpdateWork: React.FC<IProps> = (props) => {
   }, [id])
   
   const submitNewWork = () => {
-    axios.post("work", work)
+    axios.post("work", work, {headers: { "Authorization": localStorage.getItem('authToken') }})
       .then(res => {
         props.history.push('/admin/work')
       })

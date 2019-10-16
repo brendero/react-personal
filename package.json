@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run start-dev",
     "start-dev": "webpack-dev-server --host localhost --env dev --config=config/webpack/dev.js --open",
-    "build": "webpack -p --env prod --config=config/webpack/prod.js"
+    "build": "webpack -p --env prod --config=config/webpack/prod.js && node express.js"
   },
   "author": "Brent De Roeck",
   "license": "ISC",
@@ -27,9 +27,11 @@
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^3.2.0",
+    "express": "^4.17.1",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
+    "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.0",
     "source-map-loader": "^0.2.4",

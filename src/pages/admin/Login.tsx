@@ -43,7 +43,7 @@ class Login extends Component<IProps,IState> {
       .then((res) => {
         // TODO: change method of token storage
         localStorage.setItem("authToken", res.data.token)
-        setAuthToken(res.data.token);
+        // setAuthToken(res.data.token);
         // redirect after login
         this.props.history.push('/admin')
       })
