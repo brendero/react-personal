@@ -67,6 +67,31 @@ nav {
       }
   }
 }
+.admin-corner {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background: $white;
+  width: 40px;
+  height: 40px;
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0px;
+    border-color: rgba(255,255,255,0.4) rgba(255,255,255,0.4) $red $red;
+    transition: border-width 0.2s;
+  }
+  &:hover {
+    transition-delay: 0.2s;
+    &:before {
+      border-width: 18px;
+    }
+  }
+}
 
 .mobile-menu-btn {
     display: none;
@@ -84,6 +109,9 @@ nav {
 @media only screen and (max-width:700px) {
     .main-nav {
         display: none;
+    }
+    .admin-corner {
+      display: none;
     }
     .mobile-menu {
         height: 100%;

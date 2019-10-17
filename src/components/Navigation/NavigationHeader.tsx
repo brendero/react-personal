@@ -34,6 +34,7 @@ const NavigationHeader = ({history}) => {
                 : null
             }
           </ul>
+          <Link to="/admin" className="admin-corner"></Link>
       </nav>
 
       <a id="menu-toggle" href="#" className={`button ${mobileToggle ? "toggled" : ""}`} onClick={event => toggleMobileMenu(event)}>
