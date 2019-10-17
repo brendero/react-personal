@@ -53,4 +53,9 @@
     width: 20%;
     align-self: flex-end;
   }
+  .error-msg {
+    margin: 0;
+    color: $red;
+    padding: 0;
+  }
 }

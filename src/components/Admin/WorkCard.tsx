@@ -2,13 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 interface IProps {
-  id: string;
+  id?: string;
   title: string;
   content: string;
   image: string;
+  deleteWorkItem: () => {};
 }
 
-const WorkCard: React.FC<IProps> = ({id, title, content, image}) => {
+const WorkCard: React.FC<IProps> = ({id, title, content, image, deleteWorkItem}) => {
   return (
     <div className="card-wrapper">
       <img src={image}/>
@@ -20,6 +21,9 @@ const WorkCard: React.FC<IProps> = ({id, title, content, image}) => {
         <Link to={`/admin/work/${id}`} >
           <i className="fa fa-pencil" />
         </Link>
+        <button className="delete-btn" onClick={() => deleteWorkItem}>
+          <i className='fa fa-times'/>
+        </button>
       </div>
   </div>
   )

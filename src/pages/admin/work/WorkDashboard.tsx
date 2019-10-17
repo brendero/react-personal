@@ -29,13 +29,25 @@ export default class WorkDashboard extends Component<{}, IState> {
       })
       .catch(err => console.log(err))
   }
+  deleteWork = async(id) => {
+    axios.delete(`work/${id}`,{ headers: { "Authorization": localStorage.getItem('authToken') }})
+      .then(res => {
+        this.setState({
+          workArray: this.state.workArray.filter(work => work._id !== id)
+        })
+      })
+      .catch(err => console.log(err))
+  }
   componentDidMount() {
     this.getWork();
   }
   render() {
     return (
       <>
-        <h1>Works</h1>
+        <h1 className="admin-title">Works</h1>
+        <Link to="/admin/work/add" className="add-new-btn">
+          Add New Work  
+        </Link>
         {
           this.state.isLoading ?
           <>
@@ -50,6 +62,7 @@ export default class WorkDashboard extends Component<{}, IState> {
               title={work.name}
               content={work.url}
               image={work.image}
+              deleteWorkItem={() => this.deleteWork(work._id)}
             />
           ))
         }

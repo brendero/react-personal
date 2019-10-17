@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import BrentSvg from '../../assets/Brent.svg';
 import axios from 'axios';
-import { Redirect } from 'react-router';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
+import setAuthToken from '../../utils/setAuthToken';
 
 interface IState {
   email: string;
   password: string;
+  errors: any;
+  [key: string]: any;
 }
 
 interface IProps extends RouteComponentProps<any> {
@@ -19,7 +21,8 @@ class Login extends Component<IProps,IState> {
 
     this.state ={
       email: '',
-      password: ''
+      password: '',
+      errors: {}
     }
     
     this.handlechange = this.handlechange.bind(this);
@@ -36,14 +39,17 @@ class Login extends Component<IProps,IState> {
 
   handleSubmit = () => {
     const { email, password } = this.state;
-    // TODO: change access token storage  
     axios.post('users/login', { email, password })
       .then((res) => {
+        // TODO: change method of token storage
         localStorage.setItem("authToken", res.data.token)
+        // setAuthToken(res.data.token);
         // redirect after login
         this.props.history.push('/admin')
       })
-      .catch(err => console.log(err))
+      .catch(err => this.setState({
+        errors: err.response.data
+      }))
   }
 
   render() {
@@ -60,10 +66,20 @@ class Login extends Component<IProps,IState> {
             <label>
               E-mail:<br/>
               <input name="email" type="email" onChange={this.handlechange}/>
+              {
+                this.state.errors.email ?
+                  <div className="error-msg">{ this.state.errors.email }</div>
+                  : null
+              }
             </label>
             <label>
               Password:<br/>
               <input name="password" type="password" onChange={this.handlechange}/>
+              {
+                this.state.errors.password ? 
+                  <div className="error-msg">{ this.state.errors.password }</div>
+                  : null
+              }
             </label>
 
             <button type="submit" onClick={this.handleSubmit} className="login-btn">

@@ -1,14 +1,14 @@
 import React from 'react'
-import DonaldGif from '../assets/Donald.gif';
+import StillHere from '../assets/johntravolta.gif';
 
 const NotFound = () => {
   return (
     <>
     <div className="fof-wrapper">
       <h1>404</h1>
-      <p>Your page URL is wrong</p>
+      <p>why are you here? there's nothing to see here</p>
     </div>
-    <img src={DonaldGif} alt="Donald wrong" className="fof-img"/>
+    <img src={StillHere} alt="Ferris bueler" className="fof-img"/>
     </>
   )
 }

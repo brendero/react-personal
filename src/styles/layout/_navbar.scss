@@ -10,11 +10,10 @@ nav {
     list-style: none;
     margin-right: 90px;
     margin-bottom: 0;
-  }
-  .main-nav li:first-child {
+  li:first-child {
     margin-right: auto;
   }
-  .main-nav a {
+  a {
     margin: 10px;
     font-family: $raleway;
     border-radius: 5px;
@@ -50,18 +49,24 @@ nav {
         }
       }
   }
-  .main-nav .logo {
-      padding: 0 !important;
+  .logout-btn {
+    background: transparent;
+    border: none;
+    padding: 15px;
+  }
+  .logo {
+    padding: 0 !important;
       &:hover {
         &::before,
         &::after {
           display: none;
         }
       }
+      img {
+        width: 40px;
+      }
   }
-  .main-nav .logo > img {
-      width: 40px;
-  }
+}
 
 .mobile-menu-btn {
     display: none;

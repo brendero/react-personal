@@ -17,7 +17,7 @@ export default class SkillModal extends Component<IProps> {
           {
             this.props.skill ?
               <>
-              <a className="closing-button" href="#" onClick={() => this.props.toggleModule(null, this.props.hidden)}><i className="fa fa-times"></i></a>
+              <a className="closing-button" onClick={() => this.props.toggleModule(null, this.props.hidden)}><i className="fa fa-times"></i></a>
               <div className="skills-detail-header">
                   <img src={this.props.skill.image} alt="{{ skill.tag }} Logo" />
                   <h1>{ this.props.skill.title }</h1>
