@@ -10,7 +10,7 @@ const cloudinaryUpload = source => {
   formData.append('upload_preset', uploadPreset)
   formData.append('file', source)
 
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     axios({
       method: 'post',
       url: upload_url,
@@ -19,7 +19,7 @@ const cloudinaryUpload = source => {
         'Content-Type': `multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW`,
       },
     })
-    .then(res => resolve(res))
+    .then(res => resolve(res.data))
     .catch(err => reject(err))
   })
 }

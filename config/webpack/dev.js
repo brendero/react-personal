@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, '../../public'),
+    path: path.resolve(__dirname, '../../public/js'),
     filename: 'main.bundle.js'
   },
   resolve: {
@@ -35,7 +35,7 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: 'assets/[name].[ext]',
+            name: 'assets/[name].[ext]'
           }
         }],
       } 
@@ -54,7 +54,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       favicon: "./src/assets/favicon-32x32.png",
-      inject: false
+      // inject: false
     })
   ]
 }
