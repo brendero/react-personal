@@ -6,9 +6,10 @@ interface IProps {
   title: string;
   content: string;
   image: string;
+  deleteSkill: () => {};
 }
 
-const SkillCard: React.FC<IProps> = ({id, title, content, image}) => {
+const SkillCard: React.FC<IProps> = ({id, title, content, image, deleteSkill}) => {
   return (
     <div className="card-wrapper">
       <img src={image}/>
@@ -20,6 +21,9 @@ const SkillCard: React.FC<IProps> = ({id, title, content, image}) => {
         <Link to={`/admin/skills/${id}`} >
           <i className="fa fa-pencil" />
         </Link>
+        <button className="delete-btn" onClick={() => deleteSkill}>
+          <i className="fa fa-times"/>
+        </button>
       </div>
   </div>
   )

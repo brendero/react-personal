@@ -31,6 +31,16 @@ export default class SkillsDashboard extends Component<{}, IState> {
       .catch(err => console.log(err))
   }
 
+  deleteSkill = async(id) => {
+    axios.delete(`skills/${id}`,{ headers: { "Authorization": localStorage.getItem('authToken') }})
+      .then(res => {
+        this.setState({
+          skillsArray: this.state.skillsArray.filter(skill => skill._id !== id)
+        })
+      })
+      .catch(err => console.log(err))
+  }
+
   componentDidMount() {
     this.getSkills();
   }
@@ -55,6 +65,7 @@ export default class SkillsDashboard extends Component<{}, IState> {
               content={skill.content}
               title={skill.title}
               image={skill.image}
+              deleteSkill={() => this.deleteSkill(skill._id)}
             />
           ))
         }

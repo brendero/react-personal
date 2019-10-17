@@ -31,6 +31,15 @@
   .edit-wrapper {
     margin-left: auto;
     padding: 20px;
+    .delete-btn {
+      margin-left: 20px;
+      background: none;
+      border: none;
+      color: $red;
+      & :hover {
+        cursor: pointer;
+      }
+    }
   }
 }
 

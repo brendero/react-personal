@@ -29,6 +29,15 @@ export default class WorkDashboard extends Component<{}, IState> {
       })
       .catch(err => console.log(err))
   }
+  deleteWork = async(id) => {
+    axios.delete(`work/${id}`,{ headers: { "Authorization": localStorage.getItem('authToken') }})
+      .then(res => {
+        this.setState({
+          workArray: this.state.workArray.filter(work => work._id !== id)
+        })
+      })
+      .catch(err => console.log(err))
+  }
   componentDidMount() {
     this.getWork();
   }
@@ -53,6 +62,7 @@ export default class WorkDashboard extends Component<{}, IState> {
               title={work.name}
               content={work.url}
               image={work.image}
+              deleteWorkItem={() => this.deleteWork(work._id)}
             />
           ))
         }
