@@ -7,6 +7,5 @@ import { BaseUrl } from './config/environment';
 
 axios.defaults.baseURL = `${BaseUrl}/api/`;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 ReactDOM.render(<App />, document.getElementById('root'));

@@ -18,6 +18,7 @@ export default class WorkDashboard extends Component<{}, IState> {
       workArray: [],
       isLoading: true
     }
+    
   }
   getWork = async () => {  
     axios.get('work')

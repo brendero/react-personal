@@ -55,7 +55,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Brent De Roeck',
-      favicon: "./src/assets/favicon-32x32.png",
+      favicon: path.resolve(__dirname, '../../src/assets/favicon-32x32.png'),
       // inject: false
     }),
     new HtmlWebpackRootPlugin(),
@@ -72,7 +72,7 @@ module.exports = {
       //   }
       // ],
       display: 'standalone',
-      start_url: './index.html'
+      start_url: './'
     })
   ]
 }

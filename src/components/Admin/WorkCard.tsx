@@ -21,7 +21,7 @@ const WorkCard: React.FC<IProps> = ({id, title, content, image, deleteWorkItem})
         <Link to={`/admin/work/${id}`} >
           <i className="fa fa-pencil" />
         </Link>
-        <button className="delete-btn" onClick={() => deleteWorkItem}>
+        <button className="delete-btn" onClick={deleteWorkItem}>
           <i className='fa fa-times'/>
         </button>
       </div>

@@ -51,7 +51,7 @@ const UpdateWork: React.FC<IProps> = (props) => {
             <input name="url" value={work.url} onChange={changeState}/>
           </label>
           <img src={work.image} />
-          <input type="file" accept="image/png, image/jpeg"/>
+
           <button onClick={submitNewWork}>
             Update Work  
           </button>    
