@@ -41,7 +41,7 @@ GET /api/skills/
 GET /api/skills/:id
 ```
 this endpoint needs the following parameters
-> :id: this is the id of the skill you want
+> :id : this is the id of the skill you want
 
 *To make or update a skill*
 > Access: private
@@ -60,7 +60,7 @@ this endpoint needs the following in its body
 DELETE /api/skills/:id
 ```
 this endpoint needs the following parameters
-> :id: this is the id of the skill you want to delete
+> :id : this is the id of the skill you want to delete
 
 ### Work
 
@@ -76,7 +76,7 @@ GET /api/work/
 GET /api/work/:id
 ```
 this endpoint needs the following parameters
-> :id: this is the id of the work item you want
+> :id : this is the id of the work item you want
 
 *To make or update a work item*
 > Access: private

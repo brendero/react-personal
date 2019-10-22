@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const HtmlWebpackRootPlugin = require('html-webpack-root-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -57,12 +58,12 @@ module.exports = {
       favicon: "./src/assets/favicon-32x32.png",
       // inject: false
     }),
+    new HtmlWebpackRootPlugin(),
     new WebpackPwaManifest({
       filename: 'manifest.json',
       name: 'Brent De Roeck Webdeveloper',
       short_name: 'Brent De Roeck',
       description: 'Brent De Roeck personal website',
-      background_color: '',
       // icons: [
       //   {
       //     src: 'favicon-32x32.png',
