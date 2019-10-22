@@ -14,9 +14,7 @@ const NavigationHeader = ({history}) => {
     history.push('/');
   }
   
-  const toggleMobileMenu = (e) => {
-    e.preventDefault();
-    
+  const toggleMobileMenu = (e) => {    
     setmobileToggle(!mobileToggle);
   }
 
@@ -46,14 +44,14 @@ const NavigationHeader = ({history}) => {
 
       <div className="mobile-menu" style={mobileToggle ? {display: 'block'} : { display: 'none'}}>
         <div>
-            <Link to="/">
+            <Link to="/" onClick={event => toggleMobileMenu(event)}>
                 <img src={BrentSvg} alt="Brent Logo" />
             </Link>
         </div>
         <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/skills">Skills</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/" onClick={event => toggleMobileMenu(event)}>Home</Link></li>
+            <li><Link to="/skills" onClick={event=> toggleMobileMenu(event)}>Skills</Link></li>
+            <li><Link to="/contact" onClick={event => toggleMobileMenu(event)}>Contact</Link></li>
         </ul>
       </div>
     </>

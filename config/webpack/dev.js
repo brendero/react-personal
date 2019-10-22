@@ -1,10 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, '../../public/js'),
+    path: path.resolve(__dirname, '../../dist/js'),
     filename: 'main.bundle.js'
   },
   resolve: {
@@ -52,9 +53,25 @@ module.exports = {
 	},
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'public/index.html',
+      title: 'Brent De Roeck',
       favicon: "./src/assets/favicon-32x32.png",
       // inject: false
+    }),
+    new WebpackPwaManifest({
+      filename: 'manifest.json',
+      name: 'Brent De Roeck Webdeveloper',
+      short_name: 'Brent De Roeck',
+      description: 'Brent De Roeck personal website',
+      background_color: '',
+      // icons: [
+      //   {
+      //     src: 'favicon-32x32.png',
+      //     sizes: '32x32',
+      //     type: 'image/png'
+      //   }
+      // ],
+      display: 'standalone',
+      start_url: './index.html'
     })
   ]
 }
