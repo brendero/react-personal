@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run start-dev",
     "start-dev": "webpack-dev-server --host localhost --env dev --config=config/webpack/dev.js --open",
-    "build": "webpack -p --env prod --config=config/webpack/prod.js && node express.js"
+    "build": "npm run clean-dist && webpack -p --env prod --config=config/webpack/prod.js && node express.js",
+    "clean-dist": "rm -f -r -d dist"
   },
   "author": "Brent De Roeck",
   "license": "ISC",
@@ -30,6 +31,7 @@
     "express": "^4.17.1",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "html-webpack-root-plugin": "^0.10.0",
     "node-sass": "^4.12.0",
     "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
@@ -40,6 +42,8 @@
     "typescript": "^3.6.3",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.8",
-    "webpack-dev-server": "^3.8.1"
+    "webpack-dev-server": "^3.8.1",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-pwa-manifest": "^4.1.1"
   }
 }

@@ -8,7 +8,7 @@ module.exports = merge(devConfig, {
   mode: 'production',
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, '../../public'),
+    path: path.resolve(__dirname, '../../dist'),
     filename: 'js/[name].bundle.js',
     chunkFilename: 'js/[name].chunk.js',
     publicPath: './'
