@@ -35,7 +35,6 @@ const UpdateSkills: React.FC<IProps> = (props) => {
   const submitNewSkill = () => {
     axios.post("skills", skill, { headers: {"Authorization": `${localStorage.getItem("authToken")}`}})
       .then(res => {
-        console.log(res.data);
         props.history.push('/admin/skills')
       })
       .catch(err => console.log(err))
@@ -55,7 +54,6 @@ const UpdateSkills: React.FC<IProps> = (props) => {
               <input name="content" value={skill.content} onChange={changeState} />
             </label>
             <img src={skill.image} />
-            <input type="file" accept="image/png, image/jpeg"/>
 
             <button onClick={submitNewSkill}>
               update Skill

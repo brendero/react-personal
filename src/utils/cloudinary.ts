@@ -10,7 +10,7 @@ const cloudinaryUpload = source => {
   formData.append('upload_preset', uploadPreset)
   formData.append('file', source)
 
-  return new Promise<string>((resolve, reject) => {
+  return new Promise<any>((resolve, reject) => {
     axios({
       method: 'post',
       url: upload_url,

@@ -21,7 +21,7 @@ const SkillCard: React.FC<IProps> = ({id, title, content, image, deleteSkill}) =
         <Link to={`/admin/skills/${id}`} >
           <i className="fa fa-pencil" />
         </Link>
-        <button className="delete-btn" onClick={() => deleteSkill}>
+        <button className="delete-btn" onClick={deleteSkill}>
           <i className="fa fa-times"/>
         </button>
       </div>

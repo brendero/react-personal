@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import BrentPng from '../../assets/Brent.png';
 import BrentSvg from '../../assets/Brent.svg';
-import setAuthToken from '../../utils/setAuthToken';
-
 
 const NavigationHeader = ({history}) => {
   const [mobileToggle, setmobileToggle] = useState(false);
 
   const logoutUser = () => {
     localStorage.removeItem('authToken');
-    // setAuthToken(null);
     history.push('/');
   }
   

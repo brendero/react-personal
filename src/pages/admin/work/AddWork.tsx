@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { IWork } from '../../../utils/types/work'
 import axios from 'axios';
 import { withRouter, RouteComponentProps} from 'react-router-dom';
@@ -11,6 +11,7 @@ interface IProps extends RouteComponentProps<any> {
 
 const AddWork: React.FC<IProps> = (props) => {
   const [newImg, setNewImg] = useState<String>('')
+  const imageRef = useRef('')
   const [work, setWork] = useState<IWork>({
     name: '',
     url: '',
@@ -38,29 +39,29 @@ const AddWork: React.FC<IProps> = (props) => {
 
   const submitNewWork = () => {
     if( newImg !== null) {
-      console.log(newImg)
       cloudinaryUpload(newImg)
         .then(res => {
           setWork({
             ...work,
-            image: res
+            image: res.url
           })
-
-          axios.post("work", work, { headers: { "Authorization": localStorage.getItem('authToken')}})
-            .then(res => {
-              props.history.push('/admin/work')
-            })
-            .catch(err => console.log(err))
         })
         .catch(err => console.log(err))
-    } else {
-      axios.post("work", work, {headers: { "Authorization": localStorage.getItem('authToken') }})
-      .then(res => {
-        props.history.push('/admin/work')
-      })
-      .catch(err => console.log(err))
+    } 
+  }
+
+  useEffect(() => {
+   const setNewWork = () => {
+    if(work.image !== '') {
+       axios.post("work", work, { headers: { "Authorization": localStorage.getItem('authToken')}})
+       .then(res => {
+         props.history.push('/admin/work')
+        })
+        .catch(err => console.log(err))
     }
   }
+    setNewWork();
+  }, [work.image])
 
   return (
     <div className="admin-form-wrapper">

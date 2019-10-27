@@ -55,8 +55,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Brent De Roeck',
-      favicon: "./src/assets/favicon-32x32.png",
-      // inject: false
+      favicon: path.resolve(__dirname, '../../src/assets/favicon-32x32.png'),
+      meta: { viewport: 'width=device-width, initial-scale=1.0'}
     }),
     new HtmlWebpackRootPlugin(),
     new WebpackPwaManifest({
@@ -64,15 +64,8 @@ module.exports = {
       name: 'Brent De Roeck Webdeveloper',
       short_name: 'Brent De Roeck',
       description: 'Brent De Roeck personal website',
-      // icons: [
-      //   {
-      //     src: 'favicon-32x32.png',
-      //     sizes: '32x32',
-      //     type: 'image/png'
-      //   }
-      // ],
       display: 'standalone',
-      start_url: './index.html'
+      start_url: './'
     })
   ]
 }

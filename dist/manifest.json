@@ -3,7 +3,6 @@
   "short_name": "Brent De Roeck",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": "./index.html",
-  "description": "Brent De Roeck personal website",
-  "background_color": ""
+  "start_url": "./",
+  "description": "Brent De Roeck personal website"
 }
