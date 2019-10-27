@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { MainWrapper } from '../MainWrapper/MainWrapper'
+import React from 'react'
+import ReactGA from 'react-ga';
+import { createBrowserHistory } from 'history';
+import { Router, Switch, Route } from "react-router-dom";
+import { MainWrapper } from '../MainWrapper/MainWrapper';
 import Home from '../../pages/Home'
 import Skills from '../../pages/Skills';
 import Contact from '../../pages/Contact';
@@ -16,9 +18,16 @@ import NavigationHeader from './NavigationHeader';
 import AddWork from '../../pages/admin/work/AddWork';
 import AddSkill from '../../pages/admin/skills/AddSkill';
 
+const history = createBrowserHistory()
+
+history.listen(location => {
+  ReactGA.set({ page: location.pathname });
+  ReactGA.pageview(location.pathname);
+});
+
 export const Navigation = () => {
   return(
-    <Router>
+    <Router history={history}>
         <NavigationHeader />
         <MainWrapper>
             <Switch>
